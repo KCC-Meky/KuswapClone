@@ -12,17 +12,18 @@ async function main() {
   // If this script is run directly using `node` you may want to call compile
   // manually to make sure everything is compiled
   // await hre.run('compile');
-  const singAddress = await hre.ethers.getSigner()
+  var singAddress = await hre.ethers.getSigners()
+  singAddress = singAddress[0]['address']
   //Deploy Wrapped Native token
   const WKCS = await hre.ethers.getContractFactory("WKCS");
-  const wkcs = await WKCS.deploy(singAddress.address, 53, singAddress.address)
+  const wkcs = await WKCS.deploy(singAddress, 53, singAddress)
   await wkcs.deployed()
   console.log("wkcs deployed to:", wkcs.address);
 
 
   //Deploy factory
   const Factory = await hre.ethers.getContractFactory('KuswapFactory');
-  const factory = await Factory.deploy(singAddress.address)
+  const factory = await Factory.deploy(singAddress)
   await factory.deployed()
   console.log("KUS factory :", factory.address)
   console.log("INIT HASH :",await factory.INIT_CODE_HASH())
@@ -31,7 +32,7 @@ async function main() {
   // const wKcsAddres = ''
   // const factoryAddress = ''
   // const Router = await hre.ethers.getContractFactory('KuswapRouter02');
-  // const router = await Router.deploy(factoryAdd, wethAdd)
+  // const router = await Router.deploy(factoryAddress, wKcsAddres)
   // await router.deployed()
   // console.log("KUS Router :", router.address)  
 }

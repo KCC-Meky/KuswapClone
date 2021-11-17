@@ -272,7 +272,7 @@ library KuswapLibrary {
                 hex'ff',
                 factory,
                 keccak256(abi.encodePacked(token0, token1)),
-                hex'04625506c764fc7ebf2cbe92e898094e33f4fe8e8e2866a5a2d602ac252eca0e' // init code hash
+                hex'cecdf0708e8f2b9b987d492ca545b1cae394d3f657c811081d70814defcfcc69' // init code hash
             ))));
     }
 
