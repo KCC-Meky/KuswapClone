@@ -4,7 +4,7 @@ import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
 import "openzeppelin-solidity/contracts/utils/math/SafeMath.sol";
 
 
-contract WETH is IERC20 {
+contract WKCS is IERC20 {
     using SafeMath for uint256;
 
     string public constant name = "Wrapped ETH on Ethereum";

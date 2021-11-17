@@ -12,7 +12,7 @@ async function main() {
   // If this script is run directly using `node` you may want to call compile
   // manually to make sure everything is compiled
   // await hre.run('compile');
-
+  const singAddress = await hre.ethers.getSigner()
   //Deploy Wrapped Native token
   const WKCS = await hre.ethers.getContractFactory("WKCS");
   const wkcs = await WKCS.deploy(singAddress.address, 53, singAddress.address)
