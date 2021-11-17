@@ -18,7 +18,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
 module.exports = {
   networks: {
-    kcc: {
+    kcc_test: {
       url: 'https://rpc-testnet.kcc.network',
       accounts: ['']
     }
